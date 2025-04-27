@@ -42,6 +42,7 @@ void search(float data)
 ```
 
 ### Output:
+![image](https://github.com/user-attachments/assets/563570e0-0f78-4b70-8805-ea37bab4a9c0)
 
 ### Result:
 Thus, the program to search a given element in the given linked list is verified successfully.
@@ -94,6 +95,7 @@ void insert(float data)
 ```
 
 ### Output:
+![image](https://github.com/user-attachments/assets/5518e08d-8f99-4d96-9b71-58838f8371f8)
 
 ### Result:
 Thus, the program to insert a node in a linked list is verified successfully.
@@ -130,6 +132,7 @@ void display()
 }
 ```
 ### Output:
+![image](https://github.com/user-attachments/assets/8faceaa4-da8d-4bb2-a430-cd087fc38ea3)
 
 ### Result:
 Thus, the program to traverse a doubly linked list is verified successfully. 
@@ -233,6 +236,7 @@ void delete()
 }
 ```
 ### Output:
+![image](https://github.com/user-attachments/assets/bdfb65eb-3361-4fed-a109-12f74939db4f)
 
 ### Result:
 Thus, the function that deletes a given element from a linked list is verified successfully.
