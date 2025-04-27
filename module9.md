@@ -1,8 +1,8 @@
-EXP NO:11 C PROGRAM TO DISPLAY STACK ELEMENTS USING AN ARRAY.
+## EXP NO:11 C PROGRAM TO DISPLAY STACK ELEMENTS USING AN ARRAY.
 
-Aim:
+### Aim:
 To write a C program to display stack elements using an array.
-Algorithm:
+### Algorithm:
 1.	Include Necessary Header Files
 2.	Declare Global Variables
 3.	Define the Display Function
@@ -11,17 +11,23 @@ Algorithm:
 6.	Perform stack operations (push, pop, etc.).
 7.	Use the display function to visualize the stack's contents
  
-Program:
+### Program:
+```
+int top=-1,i;
+float stack[100];
+void display()
+{
+    for(i=top;i>=0;i--)
+    {
+        printf("%.1f\n",stack[i]);
+    }
+}
+```
+### Output:
+![image](https://github.com/user-attachments/assets/b4ba87ed-c6f6-4ac7-8af6-4d469355e7a2)
 
-//type your code here
 
-Output:
-
-//paste your output here
-
-
-
-Result:
+### Result:
 Thus, the program to display stack elements using an array is verified successfully.
  
 
