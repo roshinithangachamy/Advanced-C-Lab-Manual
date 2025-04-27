@@ -1,9 +1,9 @@
-EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
+## EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
 
-Aim:
+### Aim:
 To write a C program for array of structure to check eligibility for the vaccine person age above 6 years of age.
 
-Algorithm:
+### Algorithm:
 1.	Declare structure eligible with age (integer) and n (character array)
 2.	Declare variable e of type eligible
 3.	Input age and name using scanf, store in e
@@ -14,22 +14,43 @@ Else
 5.	Print details (e.age, e.n)
 6.	Return 0
  
-Program:
+### Program:
+```
+#include <stdio.h>
+typedef struct age
+{
+    int a;
+    char name[100];
+}x;
+int main()
+{
+    x s;
+    scanf("%d%s",&s.a,s.name);
+    if(s.a>18){
+    printf("Age:%d",s.a);
+    printf("\nName:%svaccine:%d",s.name,s.a);
+    printf("\neligibility:yes");   
+    }
+    else
+    {
+        printf("Age:%d",s.a);
+ printf("\nName:%svaccine:%d",s.name,s.a);
+    printf("\neligibility:no");
+    }   
+}
+```
 
-//type your code here
+
+### Output:
+![Screenshot 2025-04-27 155623](https://github.com/user-attachments/assets/c7baa969-257c-410d-89f8-e8feaa4dd5be)
 
 
-Output:
-
-//paste your output here
-
-
-Result:
+### Result:
 Thus, the program is verified successfully. 
 
 
 
-EXP NO:2 C PROGRAM FOR PASSING STRUCTURES AS FUNCTION ARGUMENTS AND RETURNING A STRUCTURE FROM A FUNCTION
+## EXP NO:2 C PROGRAM FOR PASSING STRUCTURES AS FUNCTION ARGUMENTS AND RETURNING A STRUCTURE FROM A FUNCTION
 Aim:
 To write a C program for passing structure as function and returning a structure from a function
 
@@ -42,32 +63,44 @@ Algorithm:
 6.	Print the result returned by the add function.
 7.	Return 0
  
-Program:
+### Program:
 
-//type your code here
+```
+#include <stdio.h>
+struct Pair {
+    int a;
+    int b;
+};
+struct Pair add(struct Pair p){
+        struct Pair pa;
+        pa.a=p.a+p.b;
+        return pa;
+}
+int main(){
+    struct Pair p;
+    scanf("%d%d",&p.a,&p.b);
+    struct Pair pa=add(p);
+    printf("%d",pa.a);   
+}
+```
 
 
 
 
-Output:
+### Output:
+![Screenshot 2025-04-27 155527](https://github.com/user-attachments/assets/51716d12-8e28-4759-8915-235f3e42fb0f)
 
-
-//paste your output here
-
-
-
-
-Result:
+### Result:
 Thus, the program is verified successfully
 
 
  
-EXP.NO:3 C PROGRAM TO READ A FILE NAME FROM USER AND WRITE THAT FILE USING FOPEN()
+## EXP.NO:3 C PROGRAM TO READ A FILE NAME FROM USER AND WRITE THAT FILE USING FOPEN()
 
-Aim:
+### Aim:
 To write a C program to read a file name from user
 
-Algorithm:
+### Algorithm:
 1.	Include the necessary header file stdio.h.
 2.	Begin the main function.
 3.	Declare a file pointer p.
@@ -84,37 +117,37 @@ Use scanf to input the file name into the name array.
 4.	End the main function.
 5.	Return 0 to indicate successful program execution.
  
-Program:
+### Program:
+```
+#include <stdio.h>
+int main() {
+    char filename[100];
+    FILE *file;
+    scanf("%s", filename);
+    file = fopen(filename, "w");
+    if (file == NULL) {
+        printf("Failed to create the file %s\n", filename);
+        return 1;
+    }
+    printf("%s File Created Successfully\n", filename);
+    printf("%s File Opened\n", filename);
+    fclose(file);
+    printf("%s File Closed\n", filename);
+    return 0;
+}
+```
+### Output:
+![Screenshot 2025-04-27 155500](https://github.com/user-attachments/assets/c2e8ab04-6108-4d99-ae04-18c366f09826)
 
-//type your code here
-
-
-
-
-Output:
-
-
-//paste your output here
-
-
-
-
-
-
-
-
-
-
-
-Result:
+### Result:
 Thus, the program is verified successfully
  
 
 
-EXP NO:4   PROGRAM TO READ A FILE NAME FROM USER, WRITE THAT FILE AND INSERT TEXT IN TO THAT FILE
+## EXP NO:4   PROGRAM TO READ A FILE NAME FROM USER, WRITE THAT FILE AND INSERT TEXT IN TO THAT FILE
 Aim:
 To write a C program to read, a file and insert text in that file
-Algorithm:
+### Algorithm:
 1.	Include the necessary header file stdio.h.
 2.	Begin the main function.
 3.	Declare a file pointer p.
@@ -131,34 +164,49 @@ Use scanf to input the file name into the name array and the number of strings i
 4.	End the main function.
 5.	Return 0 to indicate successful program execution.
  
-Program:
+### Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    char filename[100];
+    FILE *file;
+    scanf("%s", filename);
+    file = fopen(filename, "w");
+    if (file == NULL) {
+        printf("Failed to create the file %s\n", filename);
+        return 1;
+    }
+    printf("%s Opened\n", filename);
+    int num_lines;
+    scanf("%d", &num_lines);
+    char line[100];
+    getchar();
+    for (int i = 0; i < num_lines; i++) {
+        fgets(line, sizeof(line), stdin);
+        fprintf(file, "%s", line);
+    }
+    fclose(file);
+    printf("Data added Successfully\n");
+    return 0;
+}
 
-//type your code here
+```
+### Output:
 
+![Screenshot 2025-04-27 155429](https://github.com/user-attachments/assets/d20c8411-4ecc-4b6e-93b9-fa22d7dff541)
 
-
-
-Output:
-
-
-//paste your output here
-
-
-
-
-
-
-Result:
+### Result:
 Thus, the program is verified successfully
 
 
 
-Ex No 5 : C PROGRAM TO DISPLAY STUDENT DETAILS USING STRUCTURE
+## Ex No 5 : C PROGRAM TO DISPLAY STUDENT DETAILS USING STRUCTURE
 
-Aim:
+### Aim:
 The aim of this program is to dynamically allocate memory to store information about multiple subjects (name and marks), input the details for each subject, and then display the stored information. Finally, it frees the allocated memory to prevent memory leaks.
 
-Algorithm:
+### Algorithm:
 1.Input the number of subjects.
 
 2.Read the integer value n from the user, which represents the number of subjects.
@@ -185,22 +233,28 @@ Algorithm:
 
 13.End the program by returning 0.
 
-Program:
+### Program:
 
-//type your code here
+```
+#include<stdio.h>
+struct store
+{
+    char code[60];
+    char name[90];
+    int mark;
+}s[3];
+int main()
+{
+    for(int i=0;i<3;i++)
+    scanf("%s %s %d",s[i].code,s[i].name,&s[i].mark);
+    for(int i=0;i<3;i++)
+    if(s[i].mark>=95)
+    printf("Staff Name:%s\n",s[i].name);
+   
+}
+```
+### Output:
 
-
-
-
-Output:
-
-
-//paste your output here
-
-
-
-
-
-
-Result:
+![Screenshot 2025-04-27 160148](https://github.com/user-attachments/assets/3f633adf-7b0e-406a-a829-8de3d0aa35e5)
+### Result:
 Thus, the program is verified successfully
