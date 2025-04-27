@@ -178,14 +178,10 @@ void insert(float data)
 }
 ```
 ### Output:
-
-
+![image](https://github.com/user-attachments/assets/54f386df-2327-4717-93e1-056b601be54c)
 
 ### Result:
 Thus, the program to insert an element in doubly linked list is verified successfully.
-
-
-
 
 ## EXP NO:20 C FUNCTION TO DELETE A GIVEN ELEMENT IN THE GIVEN LINKED LIST
 
