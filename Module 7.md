@@ -1,48 +1,40 @@
-## EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
+## EXP NO:1 C PROGRAM TO ADD TWO DISTANCE IN THE INCH-FEET SYSTEM USING POINTER TO STRUCTURE.
 
 ### Aim:
-To write a C program for array of structure to check eligibility for the vaccine person age above 6 years of age.
-
+To write a C program to add two distances in the inch-feet system using pointer to structure
 ### Algorithm:
-1.	Declare structure eligible with age (integer) and n (character array)
-2.	Declare variable e of type eligible
-3.	Input age and name using scanf, store in e
-4.	If e.age <= 6
--	Print "Vaccine Eligibility: No"
-Else
--	Print "Vaccine Eligibility: Yes"
-5.	Print details (e.age, e.n)
-6.	Return 0
+
+1. Start and define a structure named Distance with two members: feet and inch.
+2. Read two distances (feet and inches) from the user into structure variables.
+3. Use pointers to access the structure members and add the feet and inches separately.
+4. Normalize inches: if total inches ≥ 12, convert extra inches into feet.
+5. Display the final total distance and stop.
  
 ### Program:
 ```
-#include <stdio.h>
-typedef struct age
+#include<stdio.h>
+struct distance
 {
-    int a;
-    char name[100];
-}x;
+    int feet;
+    float inch;
+};
 int main()
 {
-    x s;
-    scanf("%d%s",&s.a,s.name);
-    if(s.a>18){
-    printf("Age:%d",s.a);
-    printf("\nName:%svaccine:%d",s.name,s.a);
-    printf("\neligibility:yes");   
-    }
-    else
-    {
-        printf("Age:%d",s.a);
- printf("\nName:%svaccine:%d",s.name,s.a);
-    printf("\neligibility:no");
-    }   
+    struct distance d1,d2,result;
+    struct distance *presult=&result;
+    scanf("%d %f",&d1.feet,&d1.inch);
+    scanf("%d %f",&d2.feet,&d2.inch);
+    presult->feet=d1.feet+d2.feet;
+    presult->inch=d1.inch+d2.inch;
+    while(presult->inch>=12.0)
+    presult->inch*=0.83;
+    printf("Sum of distances = %d'-%.1f\"\n ",presult->feet,presult->inch);
 }
 ```
 
 
 ### Output:
-![Screenshot 2025-04-27 155623](https://github.com/user-attachments/assets/c7baa969-257c-410d-89f8-e8feaa4dd5be)
+<img width="486" height="242" alt="image" src="https://github.com/user-attachments/assets/79fe6d0a-21b4-4308-93f0-5584e567ff55" />
 
 
 ### Result:
@@ -50,45 +42,43 @@ Thus, the program is verified successfully.
 
 
 
-## EXP NO:2 C PROGRAM FOR PASSING STRUCTURES AS FUNCTION ARGUMENTS AND RETURNING A STRUCTURE FROM A FUNCTION
+## EXP NO:2 C PROGRAM TO CALCULATE SIMPLE INTEREST FOR 5 YEARS USING POINTER TO STRUCTURE.
 Aim:
-To write a C program for passing structure as function and returning a structure from a function
+To write a C program to calculate Simple Interest for 5 years using pointer to structure 
 
-Algorithm:
-1.	Define structure numbers with members a and b.
-2.	Declare variable n of type numbers.
-3.	Prompt the user to enter values for a and b.
-4.	Input values for a and b into n using scanf.
-5.	Call the add function with n as an argument.
-6.	Print the result returned by the add function.
-7.	Return 0
+### Algorithm:
+
+1. Begin the program and create a structure to store principal, rate, and time.
+2. Assign time as 5 years and read the principal and rate values from the user.
+3. Use a pointer to access the structure members.
+4. Calculate simple interest using the formula: Principal × Rate × Time ÷ 100.
+5. Display the simple interest and end the program.
  
 ### Program:
 
 ```
-#include <stdio.h>
-struct Pair {
-    int a;
-    int b;
+#include<stdio.h>
+struct interest{
+    float principle;
+   float rate;
+   float year;
+   float SI;
 };
-struct Pair add(struct Pair p){
-        struct Pair pa;
-        pa.a=p.a+p.b;
-        return pa;
-}
 int main(){
-    struct Pair p;
-    scanf("%d%d",&p.a,&p.b);
-    struct Pair pa=add(p);
-    printf("%d",pa.a);   
+   struct interest *resultptr, res;
+   resultptr = &res;  
+   scanf("%f", &resultptr->principle);
+ resultptr->year=5.0;   
+   scanf("%f", &resultptr->rate);
+   resultptr->SI = (resultptr->principle * resultptr->year* resultptr->rate) /100;
+   printf("Simple Interest: %.2f", resultptr->SI);
+   return 0;
 }
 ```
 
-
-
-
 ### Output:
-![Screenshot 2025-04-27 155527](https://github.com/user-attachments/assets/51716d12-8e28-4759-8915-235f3e42fb0f)
+
+<img width="490" height="134" alt="image" src="https://github.com/user-attachments/assets/a7763b47-3d60-462c-aa06-dd04a3ba0967" />
 
 ### Result:
 Thus, the program is verified successfully
