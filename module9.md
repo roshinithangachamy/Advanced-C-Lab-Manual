@@ -1,7 +1,7 @@
-## EXP NO:11 C PROGRAM TO DISPLAY STACK ELEMENTS USING AN ARRAY.
+## EXP NO:11 C PROGRAM TO FIND THE PEEK OF STACK USING ARRAY.
 
 ### Aim:
-To write a C program to display stack elements using an array.
+To write a C program using function to find the peek of stack using array.
 ### Algorithm:
 1.	Include Necessary Header Files
 2.	Declare Global Variables
@@ -13,18 +13,20 @@ To write a C program to display stack elements using an array.
  
 ### Program:
 ```
-int top=-1,i;
-float stack[100];
-void display()
+int stack[100],top;
+void peek()
 {
-    for(i=top;i>=0;i--)
+    if(top==-1)
+    printf("Underflow");
+    else
     {
-        printf("%.1f\n",stack[i]);
+        printf("%d",stack[top]);
     }
 }
 ```
 ### Output:
-![image](https://github.com/user-attachments/assets/b4ba87ed-c6f6-4ac7-8af6-4d469355e7a2)
+<img width="379" height="380" alt="image" src="https://github.com/user-attachments/assets/412ea2b5-10e9-47e0-8edd-3d4d8ef0a78e" />
+
 
 
 ### Result:
