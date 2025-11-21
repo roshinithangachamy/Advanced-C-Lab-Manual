@@ -1,83 +1,78 @@
-## EXP NO:6 C PROGRAM PRINT THE LOWERCASE ENGLISH WORD CORRESPONDING TO THE NUMBER
+## EXP NO:6 C PROGRAM TO PRINT THE 6th TERM OF THE SERIES,S(n). 
 ### Aim:
-To write a C program print the lowercase English word corresponding to the number
+To write a C program to print the 6th term of the series,S(n).
 ### Algorithm:
-1.	Start
-- Initialize an integer variable n.
-2.	Input Validation
-3.	Switch Statement cases.
--	Case 5: Print "seventy one"
--	Case 6: Print "seventy two"
--	Case 13: Print "seventy three"
--	...
--	Case 13: Print "seventy nine"
--	Default: Print "Greater than 13"
-4.	Exit the program.
+
+1. Start the program and read the value of n (the term to be found) and the first three terms a, b, and c of the series.
+2. If n is 1, 2, or 3, directly return the corresponding value (a, b, or c).
+3. If n is greater than 3, define a recursive function S(n) that returns the sum of the previous three terms:
+S(n) = S(n-1) + S(n-2) + S(n-3).
+4. Call the recursive function with the value n to compute the required term.
+5. Display the result returned by the recursive function and end the program.
  
 ### Program:
 ```
 #include<stdio.h>
-#include<string.h>
+int series(int n,int a,int b,int c)
+{
+    if(n==a||n==b||n==c)
+    return n;
+    else
+    return series(n-1,a,b,c)+series(n-2,a,b,c)+series(n-3,a,b,c);
+}
 int main()
 {
-    char str[1000];
-    scanf("%999s",str);
-    int digits[10]={0};
-    for(int i=0;i<strlen(str);i++)
-    {
-        if(str[i]>=48 && str[i]<=57)
-        digits[str[i]-48]++;
-    }
-    for(int i=0;i<10;i++)
-    {
-        printf("%d ",digits[i]);
-    }
-    return 0;
+    int n,a,b,c;
+    scanf("%d%d%d%d",&n,&a,&b,&c);
+    int res=series(n,a,b,c);
+    printf("%d",res);
 }
-
 ```
 ### Output:
-![Screenshot 2025-04-27 161206](https://github.com/user-attachments/assets/a9404f71-85f9-4ed0-9d41-db5ea6782ee0)
+<img width="298" height="129" alt="image" src="https://github.com/user-attachments/assets/022b709d-a9ed-4984-97f2-b5253eac54f3" />
 
 ### Result:
 Thus, the program is verified successfully
  
-## EXP NO:7 C PROGRAM TO PRINT TEN SPACE-SEPARATED INTEGERS     IN A SINGLE  LINE DENOTING THE FREQUENCY OF EACH DIGIT FROM 0 TO 3 .
+## EXP NO:7 C PROGRAM TO PRINT THE GREATEST OF THE FOUR INTEGERS.
 ### Aim:
-To write a C program to print ten space-separated integers in a single line denoting the frequency of each digit from 0 to 3.
-Algorithm:
-1.	Start
-2.	Declare char array a[50] outer loop for each digit from 0 to 3
-3.	Initialize counter c to 0
-4.	For each character in the string print count c for current digit, followed by a space
-5.	Increment h to move to the next digit
-6.	End
+To write a C program to print the greatest of the four integers using a function int max_of_four(int a, int b, int c, int d) which reads four arguments and returns.
+
+### Algorithm:
+
+1. Start the program and read the four integer values: a, b, c, and d.
+2. Create a function max_of_four(a, b, c, d) to find the largest value.
+3. Inside the function, first compare a and b, store the larger one.
+4. Compare this larger value with c, then compare the new larger value with d.
+5. Return the final maximum value and print it as the output.
  
 ### Program:
 ```
 #include<stdio.h>
-#include <string.h>
+int max_of_four(int a, int b, int c, int d)
+{
+    if(a>b && a>c && a>d)
+    return a;
+    else if(b>a && b>c && b>d)
+    return b;
+    else if(c>a && c>b && c>d)
+    return c;
+    else 
+    return d;
+}
 int main()
 {
-    char str[100];
-    int freq[10]={0};
-    scanf("%s",str);
-    for(int i=0;i<strlen(str);i++)
-    {
-        freq[str[i]-'0']++;
-    }
-    for(int i=0;i<10;i++)
-    {
-        printf("%d ",freq[i]);
-    }
-    return 0;
+    int a,b,c,d;
+    scanf("%d%d%d%d",&a,&b,&c,&d);
+    int res=max_of_four(a,b,c,d);
+    printf("%d",res);
 }
+
 ```
 
 
 ### Output:
-
-![Screenshot 2025-04-27 161820](https://github.com/user-attachments/assets/4939c1c4-751f-434a-b8dd-c53f7869b329)
+<img width="248" height="247" alt="image" src="https://github.com/user-attachments/assets/8494bc36-8d9a-45d5-b7ae-6174c102f164" />
 
 ### Result:
 Thus, the program is verified successfully
