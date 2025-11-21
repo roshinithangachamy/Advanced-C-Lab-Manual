@@ -212,7 +212,7 @@ o	If the element is not found in any node, print a message indicating the elemen
 struct Node
 {
     struct Node *prev;
-    struct Node *next;
+    struct Node *next; 
     float data;
 }*head;
 void delete()
