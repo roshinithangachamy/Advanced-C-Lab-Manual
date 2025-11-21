@@ -1,41 +1,42 @@
-## EXP NO:21 C PROGRAM TO CREATE A FUNCTION TO FIND THE GREATEST NUMBER
+## EXP NO:21 C PROGRAM TO REVERSE A STRING.
 ### Aim:
-To write a C program to create a function to find the greatest number
+To write a C program to  reverse a String.
 
 ### Algorithm:
-1.	Include the necessary header #include <stdio.h>.
-2.	Use a series of if and else if statements to compare the values and return the maximum among them.
-3.	Declare variables n1, n2, n3, n4, and greater to store user input and the result.
-4.	Use scanf to take four integers as input.
-5.	Call the max_of_four function with the input integers and store the result in the greater variable
- 
+
+1. Start the program and read the string from the user.
+2. Find the length of the string using a loop (count characters until '\0').
+3. Set two indices: one at the beginning (start = 0) and one at the end (end = length - 1).
+4. Swap the characters at start and end, then move start forward and end backward until both meet.
+5. Print the reversed string and end the program.
+
 ### Program:
 ```
 #include<stdio.h>
-int max_of_four(int a, int b, int c, int d)
+#include<string.h>
+int main()
 {
-    if(a>b && a>c && a>d)
+    char str[100],temp;
+    int i,j;
+    scanf("%s",str);
+    printf("Input String: %s\n",str);
+    i=0;
+    j=strlen(str)-1;
+    while(i<j)
     {
-        return a;
+        temp=str[i];
+        str[i]=str[j];
+        str[j]=temp;
+        i++;
+        j--;
     }
-    else if(b>a && c>a && d>a)
-    {
-        return b;
-    }
-    
-    else if(c>a && c>b && c>d)
-    {
-        return c;
-    }
-    else
-    {
-        return d;
-    }
+    printf("Reverse String: %s\n",str);
+    return 0;
 }
 
 ```
 ### Output:
-![image](https://github.com/user-attachments/assets/7c524b50-c9f2-48c1-952e-3df1278f840a)
+<img width="450" height="187" alt="image" src="https://github.com/user-attachments/assets/221f0996-99ea-4e3c-ab02-afc4812f718f" />
 
 
 ### Result:
